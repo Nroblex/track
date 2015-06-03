@@ -2,6 +2,7 @@ package gpx.Impl;
 
 import gpx.GpxService;
 import org.apache.commons.io.IOUtils;
+import org.apache.log4j.Logger;
 import org.jboss.resteasy.plugins.providers.multipart.InputPart;
 import org.jboss.resteasy.plugins.providers.multipart.MultipartFormDataInput;
 
@@ -21,6 +22,8 @@ public class GpxServiceImpl extends ImportEngine implements GpxService {
 
     public Response importGpx(MultipartFormDataInput input) {
 
+        Logger myLog = Logger.getLogger(this.getClass());
+
         String fileName = "";
 
         Map<String, List<InputPart>> uploadForm = input.getFormDataMap();
@@ -32,6 +35,9 @@ public class GpxServiceImpl extends ImportEngine implements GpxService {
                 MultivaluedMap<String, String> header = inputPart.getHeaders();
                 fileName = getFilname(header);
 
+                if (fileName.length() > 0) {
+                    myLog.info(String.format("Saving actual file %s", fileName));
+                }
                 // Converting uploaded file to inputstream.
                 InputStream inputStream = inputPart.getBody(InputStream.class, null);
 

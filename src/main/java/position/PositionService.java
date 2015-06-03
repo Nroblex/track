@@ -4,7 +4,6 @@ import position.Model.Person;
 import position.Model.Position;
 
 import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -19,9 +18,6 @@ import java.sql.SQLException;
 @Path("/position")
 public interface PositionService {
 
-    @GET
-    @Path("/dummy")
-    public Response getDummy();
 
     @POST
     @Path("/person")

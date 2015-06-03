@@ -18,5 +18,4 @@ public interface GpxService {
     @Consumes("multipart/form-data")
     public Response importGpx(MultipartFormDataInput input);
 
-
 }
