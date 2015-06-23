@@ -3,10 +3,7 @@ package position;
 import position.Model.Person;
 import position.Model.Position;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.sql.SQLException;
@@ -18,6 +15,10 @@ import java.sql.SQLException;
 @Path("/position")
 public interface PositionService {
 
+    @GET
+    @Path("/ping")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public String ping();
 
     @POST
     @Path("/person")
@@ -25,13 +26,13 @@ public interface PositionService {
     public Response savePerson(final Person person);
 
     @POST
-    @Path("/position")
+    @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response handlePosition(final Position position) throws SQLException, ClassNotFoundException;
 
 
     @PUT
-    @Path("position")
+    @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response insertPosition(final Position position);
 

@@ -76,8 +76,8 @@
                 <configuration>
                     <url>http://localhost:8080/manager/text</url>
                     <server>localhost</server>
-                    <username>selborn</username>
-                    <password>anders</password>
+                    <username>admin</username>
+                    <password>admin</password>
                     <path>/track</path>
                 </configuration>
             </plugin>

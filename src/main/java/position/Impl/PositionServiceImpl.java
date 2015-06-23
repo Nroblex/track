@@ -12,6 +12,10 @@ import javax.ws.rs.core.Response;
  */
 public class PositionServiceImpl extends PositionDAOImpl implements PositionService {
 
+    public String ping() {
+        return "PONG!";
+    }
+
     public Response savePerson(Person person) {
 
         String response = person.toString();
