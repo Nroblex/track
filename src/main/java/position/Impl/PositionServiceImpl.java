@@ -1,8 +1,7 @@
 package position.Impl;
 
 import position.DAO.PositionDAOImpl;
-import position.Model.Person;
-import position.Model.Position;
+import position.Model.*;
 import position.PositionService;
 
 import javax.ws.rs.core.Response;
@@ -12,8 +11,14 @@ import javax.ws.rs.core.Response;
  */
 public class PositionServiceImpl extends PositionDAOImpl implements PositionService {
 
-    public String ping() {
-        return "PONG!";
+    public PingResponse ping() {
+        return new PingResponse("Pong pong!");
+    }
+
+    public TaskResponse post(Person person) {
+
+        return new TaskResponse("Mission Compleated");
+
     }
 
     public Response savePerson(Person person) {

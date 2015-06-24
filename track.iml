@@ -60,5 +60,6 @@
     <orderEntry type="library" name="Maven: org.joda:joda-convert:1.7" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.4" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.enunciate:enunciate-core-annotations:1.26.2" level="project" />
   </component>
 </module>

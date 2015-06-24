@@ -1,7 +1,9 @@
 package position;
 
 import position.Model.Person;
+import position.Model.PingResponse;
 import position.Model.Position;
+import position.Model.TaskResponse;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -13,17 +15,17 @@ import java.sql.SQLException;
  */
 
 @Path("/position")
+@Produces(MediaType.APPLICATION_JSON)
 public interface PositionService {
 
     @GET
     @Path("/ping")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public String ping();
+    public PingResponse ping();
 
     @POST
-    @Path("/person")
+    @Path("/post")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response savePerson(final Person person);
+    public TaskResponse post(Person person);
 
     @POST
     @Path("/")

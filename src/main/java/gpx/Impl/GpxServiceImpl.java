@@ -36,7 +36,7 @@ public class GpxServiceImpl extends ImportEngine implements GpxService {
                 fileName = getFilname(header);
 
                 if (fileName.length() > 0) {
-                    myLog.info(String.format("Saving actual file %s", fileName));
+                    myLog.info(String.format("If this file is a valid GPXfile it will be processed... %s", fileName));
                 }
                 // Converting uploaded file to inputstream.
                 InputStream inputStream = inputPart.getBody(InputStream.class, null);

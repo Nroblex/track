@@ -64,6 +64,11 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
+        <dependency>
+            <groupId>org.codehaus.enunciate</groupId>
+            <artifactId>enunciate-core-annotations</artifactId>
+            <version>1.26.2</version>
+        </dependency>
     </dependencies>
 
     <build>
