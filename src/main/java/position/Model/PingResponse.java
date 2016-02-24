@@ -9,6 +9,6 @@ import org.codehaus.enunciate.json.JsonRootType;
 public class PingResponse extends ResponseMessage{
 
     public PingResponse(final String answer) {
-        super(ResponseType.response_ping, answer);
+        super(ResponseType.RESPONSE_PING, answer);
     }
 }

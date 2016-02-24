@@ -6,6 +6,6 @@ package position.Model;
 public class TaskResponse extends ResponseMessage {
 
     public TaskResponse(String answer) {
-        super(ResponseType.response_sucess, answer);
+        super(ResponseType.RESPONSE_SUCCESS, answer);
     }
 }

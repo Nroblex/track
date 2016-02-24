@@ -22,11 +22,12 @@ public abstract class PositionDAOImpl {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
-            connect = DriverManager.getConnection("jdbc:mysql://localhost/track?user=anders&password=selborn");
+            //connect = DriverManager.getConnection("jdbc:mysql://localhost/track?user=anders&password=selborn");
 
             String sql = "INSERT INTO pos(Latitude, Longitude, speed, altitude, heartrate, gpstime) values(?,?,?,?,?,?)";
 
-            pstmt = connect.prepareStatement(sql);
+            //pstmt = connect.prepareStatement(sql);
+            pstmt = ConnectionManager.getConnected().prepareStatement(sql);
 
             pstmt.setDouble(1, position.getLatitude());
             pstmt.setDouble(2, position.getLongitude());
@@ -46,6 +47,15 @@ public abstract class PositionDAOImpl {
 
         return true;
 
+    }
+
+
+    public Boolean saveTrackPoint(){
+
+        String sql = "INSERT INTO trackpoint(latitude, longitude) VALUES (?,?)";
+        pstmt = ConnectionManager.getConnected().prepareStatement(sql);
+
+        return true;
     }
 
     public void updatePosition(Position position) {

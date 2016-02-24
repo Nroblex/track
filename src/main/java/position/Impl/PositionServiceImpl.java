@@ -5,6 +5,7 @@ import position.Model.*;
 import position.PositionService;
 
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 /**
  * Created by ueh093 on 5/5/15.
@@ -19,6 +20,24 @@ public class PositionServiceImpl extends PositionDAOImpl implements PositionServ
 
         return new TaskResponse("Mission Compleated");
 
+    }
+
+    @Override
+    public TaskResponse saveTrackPoint(TrackPoint trackPoint) {
+
+
+        return new TaskResponse("Trackpoint was saved!");
+
+    }
+
+    @Override
+    public TaskResponse saveTrackPoints(List<TrackPoint> trackPointList) {
+
+        for (TrackPoint trackPoint : trackPointList){
+            saveTrackPoint(trackPoint);
+        }
+
+        return new TaskResponse("Trackpointlist was saved!");
     }
 
     public Response savePerson(Person person) {

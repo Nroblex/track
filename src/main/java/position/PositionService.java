@@ -4,11 +4,13 @@ import position.Model.Person;
 import position.Model.PingResponse;
 import position.Model.Position;
 import position.Model.TaskResponse;
+import position.Model.TrackPoint;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * Created by ueh093 on 5/5/15.
@@ -26,6 +28,16 @@ public interface PositionService {
     @Path("/post")
     @Consumes(MediaType.APPLICATION_JSON)
     public TaskResponse post(Person person);
+
+    @POST
+    @Path("/trackpoint")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public TaskResponse saveTrackPoint(TrackPoint trackPoint);
+
+    @POST
+    @Path("/trackpoints")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public TaskResponse saveTrackPoints(List<TrackPoint> trackPointList);
 
     @POST
     @Path("/")

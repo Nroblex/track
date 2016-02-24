@@ -117,8 +117,8 @@
                 <configuration>
                     <url>http://localhost:8080/manager/text</url>
                     <server>localhost</server>
-                    <username>admin</username>
-                    <password>admin</password>
+                    <username>anders</username>
+                    <password>selborn</password>
                     <path>/track</path>
                 </configuration>
             </plugin>
