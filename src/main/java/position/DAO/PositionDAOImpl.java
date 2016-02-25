@@ -1,6 +1,7 @@
 package position.DAO;
 
 import position.Model.Position;
+import position.Model.TrackPoint;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -50,10 +51,22 @@ public abstract class PositionDAOImpl {
     }
 
 
-    public Boolean saveTrackPoint(){
+    public Boolean doSaveTrackPoint(TrackPoint myTrackpoint){
 
         String sql = "INSERT INTO trackpoint(latitude, longitude) VALUES (?,?)";
-        pstmt = ConnectionManager.getConnected().prepareStatement(sql);
+
+        try {
+            pstmt = ConnectionManager.getConnected().prepareStatement(sql);
+
+            pstmt.setDouble(1,myTrackpoint.getLatitude());
+            pstmt.setDouble(2, myTrackpoint.getLongitude());
+
+            pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
 
         return true;
     }
