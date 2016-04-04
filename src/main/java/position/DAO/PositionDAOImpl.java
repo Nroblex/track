@@ -1,5 +1,6 @@
 package position.DAO;
 
+
 import position.Model.Position;
 import position.Model.TrackPoint;
 
@@ -7,7 +8,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by ueh093 on 5/6/15.
@@ -53,13 +57,18 @@ public abstract class PositionDAOImpl {
 
     public Boolean doSaveTrackPoint(TrackPoint myTrackpoint){
 
-        String sql = "INSERT INTO trackpoint(latitude, longitude) VALUES (?,?)";
+        String sql = "INSERT INTO trackpoint(latitude, longitude, trackguid, heartrate) VALUES (?,?,?,?)";
 
         try {
+
             pstmt = ConnectionManager.getConnected().prepareStatement(sql);
 
             pstmt.setDouble(1,myTrackpoint.getLatitude());
             pstmt.setDouble(2, myTrackpoint.getLongitude());
+            pstmt.setString(3, myTrackpoint.getTrackguid());
+            pstmt.setInt(4, myTrackpoint.getHeartrate());
+
+            //pstmt.setTimestamp(5, getMyTimestamp(myTrackpoint.getTimePoint()));
 
             pstmt.executeUpdate();
 
@@ -69,6 +78,15 @@ public abstract class PositionDAOImpl {
         }
 
         return true;
+    }
+
+    private Timestamp getMyTimestamp(long timePoint) {
+
+        SimpleDateFormat dtFmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date myDate = new Date(timePoint);
+
+        return Timestamp.valueOf(dtFmt.format(myDate));
+
     }
 
     public void updatePosition(Position position) {

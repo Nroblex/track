@@ -1,5 +1,7 @@
 package position.Model;
 
+import org.codehaus.enunciate.json.JsonProperty;
+
 /**
  * Created by ueh093 on 6/25/15.
  */
@@ -7,6 +9,9 @@ public class TrackPoint {
 
     private double latitude;
     private double longitude;
+    private String trackguid;
+    private Integer heartrate;
+    //private long timepoint;
 
 
     public double getLatitude() {
@@ -24,4 +29,28 @@ public class TrackPoint {
     public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
+
+    public String getTrackguid() {
+        return trackguid;
+    }
+
+    public void setTrackguid(String trackguid) {
+        this.trackguid = trackguid;
+    }
+
+    public Integer getHeartrate() {
+        return heartrate;
+    }
+
+    public void setHeartrate(Integer heartrate) {
+        this.heartrate = heartrate;
+    }
+
+    //public long getTimePoint() {
+    //    return timepoint;
+    //}
+
+    //public void setTimePoint(long timePoint) {
+    //    this.timepoint = timePoint;
+    //}
 }

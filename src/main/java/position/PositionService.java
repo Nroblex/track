@@ -37,7 +37,7 @@ public interface PositionService {
     @POST
     @Path("/trackpoints")
     @Consumes(MediaType.APPLICATION_JSON)
-    public TaskResponse saveTrackPoints(List<TrackPoint> trackPointList);
+    public Response saveTrackPoints(List<TrackPoint> trackPointList);
 
     @POST
     @Path("/")

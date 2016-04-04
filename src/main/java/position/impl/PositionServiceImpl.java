@@ -19,7 +19,7 @@ import position.PositionService;
 public class PositionServiceImpl extends PositionDAOImpl implements PositionService {
     @Override
     public PingResponse ping() {
-        return new PingResponse("Ping pong man!");
+        return new PingResponse("Ping pong is the man!");
     }
 
     @Override
@@ -37,8 +37,14 @@ public class PositionServiceImpl extends PositionDAOImpl implements PositionServ
     }
 
     @Override
-    public TaskResponse saveTrackPoints(List<TrackPoint> trackPointList) {
-        return null;
+    public Response saveTrackPoints(List<TrackPoint> trackPointList) {
+
+        Response response = null;
+        for (TrackPoint trkPnt : trackPointList){
+            response = saveTrackPoint(trkPnt);
+        }
+
+        return response;
     }
 
     @Override
