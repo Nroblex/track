@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.codehaus.enunciate:enunciate-core-annotations:1.26.2">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/enunciate/enunciate-core-annotations/1.26.2/enunciate-core-annotations-1.26.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/enunciate/enunciate-core-annotations/1.26.2/enunciate-core-annotations-1.26.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/enunciate/enunciate-core-annotations/1.26.2/enunciate-core-annotations-1.26.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -57,7 +57,7 @@ public abstract class PositionDAOImpl {
 
     public Boolean doSaveTrackPoint(TrackPoint myTrackpoint){
 
-        String sql = "INSERT INTO trackpoint(latitude, longitude, trackguid, heartrate) VALUES (?,?,?,?)";
+        String sql = "INSERT INTO trackpoint(latitude, longitude, trackguid, heartrate, timepoint) VALUES (?,?,?,?,?)";
 
         try {
 
@@ -68,7 +68,7 @@ public abstract class PositionDAOImpl {
             pstmt.setString(3, myTrackpoint.getTrackguid());
             pstmt.setInt(4, myTrackpoint.getHeartrate());
 
-            //pstmt.setTimestamp(5, getMyTimestamp(myTrackpoint.getTimePoint()));
+            pstmt.setTimestamp(5, getMyTimestamp(myTrackpoint.getTimepoint()));
 
             pstmt.executeUpdate();
 
