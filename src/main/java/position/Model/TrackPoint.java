@@ -11,7 +11,7 @@ public class TrackPoint {
     private double longitude;
     private String trackguid;
     private Integer heartrate;
-    private long timepoint;
+    //private long timepoint;
 
 
     public double getLatitude() {
@@ -46,12 +46,11 @@ public class TrackPoint {
         this.heartrate = heartrate;
     }
 
+    //public long getTimePoint() {
+    //    return timepoint;
+    //}
 
-    public long getTimepoint() {
-        return timepoint;
-    }
-
-    public void setTimepoint(long timepoint) {
-        this.timepoint = timepoint;
-    }
+    //public void setTimePoint(long timePoint) {
+    //    this.timepoint = timePoint;
+    //}
 }
